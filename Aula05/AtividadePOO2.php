@@ -22,7 +22,25 @@ class Usuario{
         $this -> endereco = $endereco;
         $this -> cep = $cep;
     }
+
+    public function TestandoReservista($sexo){
+        if($sexo == "M"){
+            echo"Apresente seu certificado de reservista do tiro de guerra!";
+        } else {
+            echo"Tudo certo";
+        }
+    }
+
+    public function Casamento($estado_civil, $ano_casado){
+        if($estado_civil == "Casado"){
+            echo"Parabéns pelo seu casamento de $ano_casado anos!";
+        } else {
+            echo "Oloco";
+        }
+    }
 }
+
+$usuario3 -> Casamento("Solteiro", 5);
 
 $usuario1 = new Usuario("Josenildo Afonso Souza","100.200.300-40","Masculino","josenewdo.souza@gmail.com","Casado","Xique-Xique","Bahia","Rua da amizade, 99", 40123-98);
 $usuario2 = new Usuario("Valentina Passos Scherrer","070.070.060-70","Feminino","scherrer.valen@outlook.com","Divorciada","Iracemápolis","São Paulo","Avenida da saudade, 1942", 23456-24);
