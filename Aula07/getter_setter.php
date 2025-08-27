@@ -53,9 +53,13 @@ class pessoas{
     public function getIdade(){
         return $this->idade;
     }
+
+    public function exibirInfo(){
+        return "O nome do Aluno: $this->nome\n CPF: $this->cpf Telefone: $this->telefone\n Idade: $this->idade\n Email: $this->email\n Senha: $this->senha";
+    }
 }
 
 $aluno1 = new pessoas("GaBrieL SOareS","999.9.999-99","(19)98226-6854",-18,"gc572640@gmail.com","teste123");
 
-echo $aluno1->getTelefone();
+echo $aluno1->exibirInfo();
 ?>
