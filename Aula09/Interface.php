@@ -15,7 +15,7 @@ namespace Aula 09;
 Caso tenham mais arquivos que formam o BackEnd de uma pagina WEB e possuem a mesma raiz, o naespace será o mesmo
 */
 
-namespace Aula_09;
+namespace Aula09;
 
 /* 
 Interfaces: é um recursono qual garante que obrigatoriamente a classe tenha que construir algum metodo previamente determinado. Funciona como uma promessa ou contrato.
