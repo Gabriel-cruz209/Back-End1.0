@@ -7,21 +7,7 @@
 //Terra, Pessoas -> Classes
 //Engravidar, nascer, crescer,fazer,doar,ajudar -> Metodos
 
-class Terra{
-    private $nome_terra;
-    private $area_terra;
-    private $populacao_terra;
 
-    public function __construct($nome_terra, $area_terra, $populacao_terra){
-        $this->nome_terra = $nome_terra;
-        $this->area_terra = $area_terra;
-        $this->populacao_terra = $populacao_terra;
-    }
-
-    public function Ajudar(){
-
-    }
-}
 
 class Pessoas{
     private $nome_pessoa;
@@ -34,20 +20,48 @@ class Pessoas{
         $this->cpf_pessoa = $cpf_pessoa;
     }
 
-    public function Engravidar(){
-
+    public function engravidar(){
+        echo "Pessoa engravidando...\n";
     }
-    public function Nascer(){
-
+    public function nascer(){
+        echo "Pessoa nascendo...\n";
     }
-    public function Crescer(){
-
+    public function crescer(){
+        echo "Pessoa crescendo...\n";
     }
-    public function FazerEscolhas(){
-
+    public function fazerEscolha(){
+        echo "Pessoa fazendo escolha...\n";
     }
-    public function DoarSangue(){
+    public function doarSangue(){
+        echo "Pessoa doando sangue...\n";
+    }
+}
 
+class Escolha{
+    private $descricao_escolha;
+    private $consequencia_escolha;
+
+    public function __construct($descricao_escolha, $consequencia_escolha){
+        $this->descricao_escolha = $descricao_escolha;
+        $this->consequencia_escolha = $consequencia_escolha;
+    }
+
+    public function realizarEscolha(){
+        echo "Escolha sendo realizada...\n";
+    }
+}
+
+class BancodeSangue{
+    private $local_banco;
+    private $capacidade_banco;
+
+    public function __construct($local_banco, $capacidade_banco){
+        $this->local_banco = $local_banco;
+        $this->capacidade_banco = $capacidade_banco;
+    }
+
+    public function armazenarSangue(){
+        echo "Banco de sangue armazenando sangue...\n";
     }
 }
 ?>

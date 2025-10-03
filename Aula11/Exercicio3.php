@@ -19,27 +19,80 @@ class Personagem{
         $this->nacionalidade_personagem = $nacionalidade_personagem;
     }
 
-    public function Amar(){
-
+    public function seguirJornada(){
+        echo "Personagem seguindo a jornada...\n";
     }
-    public function Comer(){
+    public function enfrentarDesafio(){
+        echo "Personagem enfrentando desafio...\n";
+    }
 
+    public function celebrar(){
+        echo "Personagens celebrando juntos...\n";
     }
 }
 
-class Caminho{
-    private $tipo_caminho;
-    private $distancia_caminho;
-    private $dificuldade_caminho;
+class Jornada{
+    private $local_jornada;
+    private $distancia_jornada;
+    private $dificuldade_jornada;
 
-    public function __construct($tipo_caminho, $distancia_caminho, $dificuldade_caminho){
-        $this->tipo_caminho = $tipo_caminho;
-        $this->distancia_caminho = $distancia_caminho;
-        $this->dificuldade_caminho = $dificuldade_caminho;
+    public function __construct($local_jornada, $distancia_jornada, $dificuldade_jornada){
+        $this->local_jornada = $local_jornada;
+        $this->distancia_jornada = $distancia_jornada;
+        $this->dificuldade_jornada = $dificuldade_jornada;
     }
 
-    public function Chover(){
+    public function avancar(){
+        echo "Jornada avançando...\n";
+    }
 
+}
+
+class Clima{
+    private $tipo_clima;
+    private $temperatura_clima;
+    private $umidade_clima;
+
+    public function __construct($tipo_clima, $temperatura_clima, $umidade_clima){
+        $this->tipo_clima = $tipo_clima;
+        $this->temperatura_clima = $temperatura_clima;
+        $this->umidade_clima = $umidade_clima;
+    }
+
+    public function mudarClima(){
+        echo "Clima mudando...\n";
+    }
+
+}
+
+class Dificuldade{
+    private $nivel_dificuldade;
+    private $descricao_dificuldade;
+
+    public function __construct($nivel_dificuldade, $descricao_dificuldade){
+        $this->nivel_dificuldade = $nivel_dificuldade;
+        $this->descricao_dificuldade = $descricao_dificuldade;
+    }
+
+    public function superarDificuldade(){
+        echo "Dificuldade aumentando...\n";
+    }
+
+}
+
+class refeicao{
+    private $tipo_refeicao;
+    private $local_refeicao;
+    private $hora_refeicao;
+
+    public function __construct($tipo_refeicao, $local_refeicao, $hora_refeicao){
+        $this->tipo_refeicao = $tipo_refeicao;
+        $this->local_refeicao = $local_refeicao;
+        $this->hora_refeicao = $hora_refeicao;
+    }
+
+    public function servirRefeicao(){
+        echo "Refeição sendo servida...\n";
     }
 
 }

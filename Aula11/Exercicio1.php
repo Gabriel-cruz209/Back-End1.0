@@ -22,16 +22,19 @@ class Turistas{
         $this->idade_turista = $idade_turista;
     }
 
-    public function Comer(){
-
+    public function visitar($localidade) {
+        echo "Turista visitando $localidade\n";
     }
-    public function Visitar(){
 
+    public function comer($comida) {
+        echo "Turista comendo $comida\n";
     }
-    public function Nadar(){
 
+    public function nadar($corpoDagua) {
+        echo "Turista nadando em $corpoDagua\n";
     }
 }
+
 
 class Lugares{
     private $nome_lugar;
@@ -46,9 +49,35 @@ class Lugares{
         $this->cidade_lugar = $cidade_lugar;
     }
 
-    public function CoisasTipicas(){
+    public function informarAtividades() {
+        echo "Atividades disponíveis na localidade.\n";
+    }
+}
 
+
+class Comida {
+    private string $nome;
+    private string $descricao;
+
+    public function __construct(string $nome, string $descricao = "") {
+        $this->nome = $nome;
+        $this->descricao = $descricao;
     }
 
+    public function getDescricao(): string {
+        return $this->nome . ($this->descricao ? " - {$this->descricao}" : "");
+    }
+}
+
+class CorpoDagua {
+    private string $tipo; // ex: Mar, Lago, Rio
+
+    public function __construct(string $tipo) {
+        $this->tipo = $tipo;
+    }
+
+    public function getTipo(): string {
+        return $this->tipo;
+    }
 }
 ?>
