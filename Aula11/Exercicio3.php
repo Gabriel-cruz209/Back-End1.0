@@ -5,8 +5,23 @@
 // caminho, começa a chover, e eles precisam amar uns aos outros para superar as
 // dificuldades. No fim da jornada, eles celebram ao comer juntos.
 
-//Personagens, Caminho -> Classe
-//Chover, Amar, Comer -> Metodos
+//Classes: Personagem, Jornada, Clima, Dificuldade, refeicao
+//Metodos: Treinar, SeguirJornada, Avançar, MudarClima, SuperarDificuldade, ServirRefeicao
+
+//Relacionamento entre classes:
+//Personagem -> Jornada / composição
+//Personagem -> Clima / agregação
+//Personagem -> Dificuldade / associação
+//Jornada -> Personagem / composição
+//Jornada -> Clima / associação
+//Jornada -> Dificuldade / associação
+//Clima -> Personagem / agregação
+//Clima -> Jornada / associação
+//Dificuldade -> Personagem / associação
+//Dificuldade -> Jornada / associação
+//Refeicao -> Personagem / associação
+//Refeicao -> Jornada / associação
+
 
 class Personagem{
     private $nome_personagem;

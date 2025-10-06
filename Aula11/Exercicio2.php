@@ -8,6 +8,21 @@
 //Herois, Lugares,crianças -> Classe
 //Fazer, doar, ir -> metodos
 
+//metodos: Treinar, Doar, ReceberBrinquedo, OferecerTreinamento, IniciarMissao, ConcluirMissao
+//classes: Heroi, missao, Crianca, shopping, Brinquedos, LocalTreinamento
+
+//Relacionamento entre classes:
+//Herois -> Missao / composição
+//Herois -> LocalTreinamento / agregação
+//Herois -> Brinquedos / associação
+//Missao -> Herois / composição
+//LocalTreinamento -> Herois / composição
+//Brinquedos -> Crianca / associação
+//Crianca -> Brinquedos / associação
+//Shopping -> Brinquedos / associação
+//Shopping -> Herois / associação
+//Crianca -> Herois / associação
+
 class Heroi{
     private $nome_heroi;
     private $poder_heroi;

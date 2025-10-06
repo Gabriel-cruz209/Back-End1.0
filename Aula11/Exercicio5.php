@@ -4,8 +4,11 @@
 // "Um sistema de biblioteca deve permitir que usuários (alunos e professores)
 // façam empréstimos de livros e revistas."
 
-//Biblioteca, Usuarios, Itens Emprestados -> Classe
-//Emprestar, Permitir -> Metodo
+//Classes->SistemaBiblioteca,Usuarios,ItensEmprestados,Emprestimo
+//Metodo->RegistrarEmpretimo,SolicitarEmprestimo,DevolverItem,Final
+
+//Relacionamento entre classes:
+
 
 class SistemaBiblioteca{
     private $nome_biblioteca;

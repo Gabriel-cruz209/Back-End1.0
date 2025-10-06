@@ -4,8 +4,14 @@
 // Na Terra, pessoas podem engravidar, nascer, crescer, fazer escolhas e até doar
 // sangue para ajudar outras.
 
-//Terra, Pessoas -> Classes
-//Engravidar, nascer, crescer,fazer,doar,ajudar -> Metodos
+//Classes: Terra, Pessoas, Escolha, BancodeSangue
+//metodos: informarAtividades, getDescricao, getTipo, visitar, comer, nadar
+
+//Relacionamento entre classes:
+//Terra -> Pessoas / composição
+//pessoas -> Terra / composição
+//Pessoas -> Escolha / composição
+//pessoas -> BancodeSangue / agregação
 
 
 

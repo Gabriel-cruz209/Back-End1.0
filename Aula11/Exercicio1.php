@@ -6,9 +6,16 @@
 // Um grupo de turistas vai visitar o Japão, o Brasil e o Acre. Em cada lugar da
 // Terra, eles poderão comer comidas típicas e nadar em rios ou praias.
 
-//Turistas,Lugares-> Classe
-// Metodos -> Visitar,comer,nadar
+//Classes: Turistas,Lugares,Comida,CorpoDagua
+//metodos: informarAtividades, getDescricao, getTipo, visitar, comer, nadar
 
+//Relacionamento entre classes:
+//Turistas -> Lugares / agregação
+//Turistas -> Comida / agregação
+//Turistas -> CorpoDagua / agregação
+//Lugares -> Turistas / associação
+//Comida -> Turistas / associação
+//CorpoDagua -> Turistas / associação
 class Turistas{
     private $nome_turista;
     private $endereco_turista;
