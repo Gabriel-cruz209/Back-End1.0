@@ -1,0 +1,32 @@
+{
+    "3": {
+        "codigo": 3,
+        "nome": "Queijo brie",
+        "preco": 14.99
+    },
+    "4": {
+        "codigo": 4,
+        "nome": "Iorgute Grego",
+        "preco": 2.99
+    },
+    "5": {
+        "codigo": 5,
+        "nome": "Guarana Jesus",
+        "preco": 4.99
+    },
+    "6": {
+        "codigo": 6,
+        "nome": "Bolacha Bono",
+        "preco": 3.99
+    },
+    "7": {
+        "codigo": 7,
+        "nome": "Desinfetante Barbarex",
+        "preco": 16.99
+    },
+    "8": {
+        "codigo": 8,
+        "nome": "Prestobarba Bic",
+        "preco": 2.99
+    }
+}
