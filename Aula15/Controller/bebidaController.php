@@ -19,8 +19,8 @@ class BebidaController{
     //cadastrar novas bebidas
     public function criar($nome, $categoria, $volume, $valor, $qtde){
         //Gera ID automaticamente com base no timeskip(Exemplo simples)
-        $id = time();
-        $bebida = new Bebida($id,$nome, $categoria, $volume, $valor, );
+        $nome = time();
+        $bebida = new Bebida($nome, $categoria, $volume, $valor, $qtde );
         $this->dao->criarBebidas($bebida);
 
     }
