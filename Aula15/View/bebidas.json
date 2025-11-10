@@ -1,9 +1,23 @@
 {
-    "1762372300": {
-        "nome": 1762372300,
+    "tyuioç": {
+        "nome": "tyuioç",
         "categoria": "Cerveja",
-        "volume": "1233",
-        "valor": "23",
-        "qtde": "123"
+        "volume": "1L",
+        "valor": "45",
+        "qtde": "6456"
+    },
+    "qs": {
+        "nome": "qs",
+        "categoria": "Água",
+        "volume": "ad",
+        "valor": "414",
+        "qtde": "14"
+    },
+    "Ádad": {
+        "nome": "Ádad",
+        "categoria": "Água",
+        "volume": "dawd",
+        "valor": "241",
+        "qtde": "3413"
     }
 }

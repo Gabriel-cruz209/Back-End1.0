@@ -28,11 +28,11 @@ class Bebida{
     }
 
     public function setValor($valor){
-        $this->valor = $valor;
+        $this->valor = abs ((int)$valor);
     }
 
     public function setQtde($qtde){
-        $this->qtde = $qtde;
+        $this->qtde = abs ((int)$qtde);
     }
 
     public function getNome(){

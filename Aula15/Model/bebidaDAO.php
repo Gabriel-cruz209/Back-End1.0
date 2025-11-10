@@ -36,7 +36,7 @@ class BebidaDAO{
                 'qtde' => $bebida -> getQtde(),
             ];
         }
-        file_put_contents($this->arquivosJson, json_encode($dadosParaSalvar, JSON_PRETTY_PRINT));
+        file_put_contents($this->arquivosJson, json_encode($dadosParaSalvar, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
     }
 
     //CREATE
@@ -46,10 +46,13 @@ class BebidaDAO{
     }
 
     //UPDATE
-    public function atualizarBebidas($nome, $novoValor, $novoQtde){
+    public function atualizarBebidas($nome, $novoValor, $novoQtde, $novoCategoria, $novoVolume, $novoNome){
         if(isset($this->bebidasArray[$nome])){
             $this->bebidasArray[$nome]->setValor($novoValor);
             $this->bebidasArray[$nome]->setQtde($novoQtde);
+            $this->bebidasArray[$nome]->setNome($novoNome);
+            $this->bebidasArray[$nome]->setVolume($novoVolume);
+            $this->bebidasArray[$nome]->setCategoria($novoCategoria);
         }
         $this->salvarArquivos();
     }
