@@ -1,3 +1,5 @@
+<!-- 
+
 <?php 
 
     namespace DESAFIO;
@@ -175,7 +177,6 @@
         private string $paisOrigem;
 
         public function __construct(int $id, string $titulo, string $autor, string $descricao, string $editora, string $genero, float $valor, int $ano, int $idadeR, int $volume, int $classIndicativa,string $paisOrigem) {
-            parent::__construct($id, $titulo, $autor, $descricao, $editora, $genero, $valor, $ano, $idadeR);
             $this->setVolume($volume);
             $this->setClassIndicativa($classIndicativa);
             $this->setPaisOrigem($paisOrigem);
@@ -301,4 +302,4 @@
 
 ?>
 index_Otavio.php
-Exibindo index_Otavio.php…
+Exibindo index_Otavio.php… -->

@@ -1,74 +1,84 @@
 <?php
+require_once 'Bebida.php';
 
-class BebidaDAO{
+class BebidaDAO {
     private $bebidasArray = [];
-    private $arquivosJson = 'bebidas.json';
+    private $arquivoJson = 'bebidas.json';
 
     public function __construct(){
-        if(file_exists("bebidas.json")) {
-            $conteudoArquivo = file_get_contents($this->arquivosJson);
+        if(file_exists("bebidas.json")){
+            $conteudoArquivo = file_get_contents($this->arquivoJson);
 
             $dadosArquivoEmArray = json_decode($conteudoArquivo, true);
 
-            if($dadosArquivoEmArray){
-                foreach($dadosArquivoEmArray as $nome => $info) {
+            if ($dadosArquivoEmArray){
+                foreach ($dadosArquivoEmArray as $nome => $info){
                     $this->bebidasArray[$nome] = new Bebida(
                         $info['nome'],
                         $info['categoria'],
                         $info['volume'],
                         $info['valor'],
-                        $info['qtde'],
+                        $info['qtde']
                     );
                 }
             }
         }
     }
 
-    private function salvarArquivos(){
-        $dadosParaSalvar = [];
+        private function salvarArquivo(){
+            $dadosParaSalvar=[];
 
-        foreach($this->bebidasArray as $nome => $bebida) {
-            $dadosParaSalvar[$nome] = [
-                'nome' => $bebida -> getNome(),
-                'categoria' => $bebida -> getCategoria(),
-                'volume' => $bebida -> getVolume(),
-                'valor' => $bebida -> getValor(),
-                'qtde' => $bebida -> getQtde(),
-            ];
+            foreach ($this->bebidasArray as $nome => $bebida){
+                $dadosParaSalvar[$nome]=[
+                    'nome'=>$bebida->getNome(),
+                    'categoria'=>$bebida->getCategoria(),
+                    'volume'=>$bebida->getVolume(),
+                    'valor'=>$bebida->getValor(),
+                    'qtde'=>$bebida->getQtde()
+                ];
+            }
+            file_put_contents($this->arquivoJson, json_encode($dadosParaSalvar, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
         }
-        file_put_contents($this->arquivosJson, json_encode($dadosParaSalvar, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
-    }
 
-    //CREATE
-    public function criarBebidas(Bebida $bebida){
-        $this->bebidasArray[$bebida->getNome()] = $bebida;
-        $this->salvarArquivos();
-    }
-
-    //UPDATE
-    public function atualizarBebidas($nome, $novoValor, $novoQtde, $novoCategoria, $novoVolume, $novoNome){
-        if(isset($this->bebidasArray[$nome])){
-            $this->bebidasArray[$nome]->setValor($novoValor);
-            $this->bebidasArray[$nome]->setQtde($novoQtde);
-            $this->bebidasArray[$nome]->setNome($novoNome);
-            $this->bebidasArray[$nome]->setVolume($novoVolume);
-            $this->bebidasArray[$nome]->setCategoria($novoCategoria);
+        // CREATE
+        public function criarBebida(Bebida $bebida){
+            $this->bebidasArray[$bebida->getNome()] = $bebida;
+            $this->salvarArquivo();
         }
-        $this->salvarArquivos();
-    }
 
-    //READ
-    public function lerBebidas(){
-        return $this->bebidasArray;
-    }
+        //READ
+        public function lerBebidas(){
+            return $this->bebidasArray;
+        }
+        
+        // UPDATE 
+        public function atualizarBebida($nomeOriginal, $novoNome, $novoVolume, $novoCategoria, $novoValor, $novaQtde){
+            if(isset($this->bebidasArray[$nomeOriginal])){
+                $bebida = $this->bebidasArray[$nomeOriginal];
+                // atualiza propriedades
+                $bebida->setNome($novoNome);
+                $bebida->setVolume($novoVolume);
+                $bebida->setCategoria($novoCategoria);
+                $bebida->setValor($novoValor);
+                $bebida->setQtde($novaQtde);
 
-    //DELETE
-    public function excluirBebibas($nome){
-        unset($this->
-        bebidasArray[$nome]);
-        $this->salvarArquivos();
-    }
+                // se o nome mudou, atualiza a chave no array
+                if ($nomeOriginal !== $novoNome) {
+                    unset($this->bebidasArray[$nomeOriginal]);
+                    $this->bebidasArray[$novoNome] = $bebida;
+                } else {
+                    $this->bebidasArray[$nomeOriginal] = $bebida;
+                }
+
+                // salva somente se encontrado
+                $this->salvarArquivo();
+            }
+        }
+
+        // DELETE
+        public function excluirBebida($nome){
+            unset($this->bebidasArray[$nome]);
+            $this->salvarArquivo();
+        }
+    
 }
-
-
-?>

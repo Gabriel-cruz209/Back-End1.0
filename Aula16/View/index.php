@@ -62,10 +62,13 @@ $lista = $controller->ler();
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
         }
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
+            border: 2px solid #000000;
             text-align: left;
             transition: transform 1s ease;
         }
