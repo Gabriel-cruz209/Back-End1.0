@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__. '../Model/livroDAO.php';
-require_once __DIR__. '../Model/livro.php';
+require_once __DIR__ . '/../Model/livroDAO.php';
+require_once __DIR__ . '/../Model/livro.php';
 
 class LivroController{
     private $dao;
