@@ -7,7 +7,7 @@
                 $host = "localhost";
                 $dbname = 'projeto_livraria';
                 $user = 'root';
-                $pass = 'senaisp';
+                $pass = '1234';
 
                 self::$instance = new PDO(
                     "mysql:host=$host;charset=utf8",

@@ -10,7 +10,7 @@ class LivroDAO{
 
         $this->conn->exec("
             CREATE TABLE IF NOT EXISTS livro(
-                id AUTO_INCREMENT PRIMARY KEY NOT NULL,
+                id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
                 titulo varchar(200) not null,
                 autor varchar(150) not null,
                 ano int not null,
@@ -39,33 +39,33 @@ class LivroDAO{
         $result = [];
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $result[] = new Livro (
-                $row['titulo'],
-                $row['genero'],
-                $row['autor'],
-                $row['ano'],
-                $row['quatidade']
+                    $row['titulo'],
+                    $row['genero'],
+                    $row['autor'],
+                    $row['ano'],
+                    $row['quantidade']
             );
         }
         return $result;
     }
 
     public function atualizarLivro($tituloOriginal,$novoTitulo,$genero,$ano_public,$autor,$qtde){
-        $stmt = $this->conn->query("
+        $stmt = $this->conn->prepare("
             UPDATE livro
             SET titulo = :novoTitulo, 
             genero = :genero,
-            ano = :ano_public,
-            quatidade = :qtde,
+            ano = :ano,
+            quantidade = :qtde,
             autor = :autor
             WHERE titulo = :tituloOriginal
         ");
         $stmt->execute([
             ':novoTitulo' => $novoTitulo,
-            ':tituloOriginal' => $tituloOriginal,
-            ':autor' => $autor,
-            ':qtde' => $qtde,
             ':genero' => $genero,
-            ':ano' => $ano_public
+            ':autor' => $autor,
+            ':ano' => $ano_public,
+            ':qtde' => $qtde,
+            ':tituloOriginal' => $tituloOriginal
         ]);
     }
 
